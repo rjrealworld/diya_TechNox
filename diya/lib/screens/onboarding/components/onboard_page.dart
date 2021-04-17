@@ -4,7 +4,6 @@ import 'package:diya/screens/onboarding/components/drawer_paint.dart';
 import 'package:diya/screens/onboarding/models/onboard_page_model.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/widgets.dart';
-import 'package:sizer/sizer.dart';
 
 class SizeConfig {
   static MediaQueryData _mediaQueryData;
@@ -23,15 +22,14 @@ class SizeConfig {
     screenHeight = _mediaQueryData.size.height;
     blockSizeHorizontal = screenWidth / 100;
     blockSizeVertical = screenHeight / 100;
-    _safeAreaHorizontal = _mediaQueryData.padding.left +
-        _mediaQueryData.padding.right;
-    _safeAreaVertical = _mediaQueryData.padding.top +
-        _mediaQueryData.padding.bottom;
-    safeBlockHorizontal = (screenWidth - _safeAreaHorizontal)/100;
-    safeBlockVertical = (screenHeight - _safeAreaVertical)/100;
+    _safeAreaHorizontal =
+        _mediaQueryData.padding.left + _mediaQueryData.padding.right;
+    _safeAreaVertical =
+        _mediaQueryData.padding.top + _mediaQueryData.padding.bottom;
+    safeBlockHorizontal = (screenWidth - _safeAreaHorizontal) / 100;
+    safeBlockVertical = (screenHeight - _safeAreaVertical) / 100;
   }
 }
-
 
 class OnboardPage extends StatefulWidget {
   final PageController pageController;
@@ -87,105 +85,104 @@ class _OnboardPageState extends State<OnboardPage>
     SizeConfig().init(context);
 
     return Stack(
-        children: <Widget>[
-          Container(
-            color: widget.pageModel.primeColor,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                AnimatedBuilder(
-                  animation: heroAnimation,
-                  builder: (context, child) {
-                    return Transform.translate(
-                      offset: Offset(heroAnimation.value, 0),
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                            right: 32.0, top: 30.0, left: 32.0),
-                        child: Image.asset(widget.pageModel.imagePath),
+      children: <Widget>[
+        Container(
+          color: widget.pageModel.primeColor,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              AnimatedBuilder(
+                animation: heroAnimation,
+                builder: (context, child) {
+                  return Transform.translate(
+                    offset: Offset(heroAnimation.value, 0),
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          right: 32.0, top: 30.0, left: 32.0),
+                      child: Image.asset(widget.pageModel.imagePath),
+                    ),
+                  );
+                },
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                child: Container(
+                  height: MediaQuery.of(context).size.height / 2.3100,
+                  width: MediaQuery.of(context).size.width / 0.25,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        widget.pageModel.caption,
+                        style: TextStyle(
+                            fontSize: 15,
+                            color:
+                                widget.pageModel.accentColor.withOpacity(0.8),
+                            letterSpacing: 1,
+                            fontStyle: FontStyle.normal),
                       ),
-                    );
-                  },
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                  child: Container(
-                    height:MediaQuery.of(context).size.height/2.3100 ,
-                     width: MediaQuery.of(context).size.width/0.25 ,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          widget.pageModel.caption,
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0),
+                        child: Text(
+                          widget.pageModel.subhead,
                           style: TextStyle(
-                              fontSize: 15,
-                              color:
-                                  widget.pageModel.accentColor.withOpacity(0.8),
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              color: widget.pageModel.accentColor,
                               letterSpacing: 1,
                               fontStyle: FontStyle.normal),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 8.0),
-                          child: Text(
-                            widget.pageModel.subhead,
-                            style: TextStyle(
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold,
-                                color: widget.pageModel.accentColor,
-                                letterSpacing: 1,
-                                fontStyle: FontStyle.normal),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: Text(
+                          widget.pageModel.description,
+                          style: TextStyle(
+                            fontSize: 18,
+                            color:
+                                widget.pageModel.accentColor.withOpacity(0.9),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8.0),
-                          child: Text(
-                            widget.pageModel.description,
-                            style: TextStyle(
-                              fontSize: 18,
-                              color:
-                                  widget.pageModel.accentColor.withOpacity(0.9),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-          Align(
-            alignment: Alignment.centerRight,
-            child: AnimatedBuilder(
-              animation: borderAnimation,
-              builder: (context, child) {
-                return CustomPaint(
-                  painter: DrawerPaint(
-                    curveColor: widget.pageModel.accentColor,
-                  ),
-                  child: Container(
-                    width: borderAnimation.value,
-                    height: double.infinity,
-                    child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Padding(
-                        padding: const EdgeInsets.only(bottom: 24.0),
-                        child: IconButton(
-                          icon: Icon(
-                            Icons.arrow_forward,
-                            color: widget.pageModel.primeColor,
-                            size: 32,
-                          ),
-                          onPressed: _nextButtonPressed,
+        ),
+        Align(
+          alignment: Alignment.centerRight,
+          child: AnimatedBuilder(
+            animation: borderAnimation,
+            builder: (context, child) {
+              return CustomPaint(
+                painter: DrawerPaint(
+                  curveColor: widget.pageModel.accentColor,
+                ),
+                child: Container(
+                  width: borderAnimation.value,
+                  height: double.infinity,
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 24.0),
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.arrow_forward,
+                          color: widget.pageModel.primeColor,
+                          size: 32,
                         ),
+                        onPressed: _nextButtonPressed,
                       ),
                     ),
                   ),
-                );
-              },
-            ),
+                ),
+              );
+            },
           ),
-        ],
-      );
-
+        ),
+      ],
+    );
   }
 }
