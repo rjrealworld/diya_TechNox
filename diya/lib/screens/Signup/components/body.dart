@@ -1,4 +1,3 @@
-import 'package:diya/Homepage/main.dart';
 import 'package:flutter/material.dart';
 import 'package:diya/Screens/Login/login_screen.dart';
 import 'package:diya/Screens/Signup/components/background.dart';
@@ -10,7 +9,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:diya/services/auth.dart';
 
 class Body extends StatefulWidget {
-
   @override
   _BodyState createState() => _BodyState();
 }
@@ -40,23 +38,25 @@ class _BodyState extends State<Body> {
                 height: size.height * 0.35,
               ),
               RoundedInputField(
-                validate: (value) =>
-                value.isEmpty ? 'Enter an email' : null,
+                validate: (value) => value.isEmpty ? 'Enter an email' : null,
                 hintText: "Your Email",
-                onChanged: (value) {setState(() => email = value);},
+                onChanged: (value) {
+                  setState(() => email = value);
+                },
               ),
               RoundedPasswordField(
-                validate: (value) => value.length < 6
-                    ? 'Enter a password 6+ chars long'
-                    : null,
-                onChanged: (value) {setState(() => password = value);},
+                validate: (value) =>
+                    value.length < 6 ? 'Enter a password 6+ chars long' : null,
+                onChanged: (value) {
+                  setState(() => password = value);
+                },
               ),
               RoundedButton(
                 text: "SIGNUP",
-                press: () async{
-
-                  if (_formKey.currentState.validate()){
-                    dynamic result = await _auth.registerWithEmailAndPassword(email, password);
+                press: () async {
+                  if (_formKey.currentState.validate()) {
+                    dynamic result = await _auth.registerWithEmailAndPassword(
+                        email, password);
 
                     if (result == null) {
                       setState(() => error = 'Provide valid credentials');
@@ -74,14 +74,11 @@ class _BodyState extends State<Body> {
                   }
                 },
               ),
-
               SizedBox(height: size.height * 0.03),
-
               Text(
                 error,
                 style: TextStyle(color: Colors.red, fontSize: 14.0),
               ),
-
               SizedBox(height: size.height * 0.03),
               AlreadyHaveAnAccountCheck(
                 login: false,

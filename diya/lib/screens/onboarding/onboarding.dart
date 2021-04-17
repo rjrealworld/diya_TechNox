@@ -6,8 +6,6 @@ import 'package:provider/provider.dart';
 import 'package:diya/screens/wrapper.dart';
 import 'package:diya/services/auth.dart';
 import 'package:diya/models/user.dart';
-
-import '../../loginscreen.dart';
 import 'components/page_view_indicator.dart';
 
 class Onboarding extends StatelessWidget {
@@ -56,14 +54,12 @@ class Onboarding extends StatelessWidget {
                       style: TextStyle(
                         color: colorProvider.color,
                         fontSize: 20,
-
                       ),
                     ),
-                    onPressed: (){
-                      Navigator.of(context)
-                          .pushReplacement(MaterialPageRoute(builder: (context) => StreamProvider<User>.value(
-                          value: AuthService().user,
-                          child: Wrapper())));
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) => StreamProvider<User>.value(
+                              value: AuthService().user, child: Wrapper())));
                     },
                   ),
                 ),

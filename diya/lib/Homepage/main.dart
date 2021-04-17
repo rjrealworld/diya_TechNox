@@ -5,8 +5,9 @@ import 'package:diya/Homepage/constants.dart';
 import 'package:diya/Homepage/screens/details_screen.dart';
 import 'package:diya/Homepage/screens/details_screen_asana.dart';
 import 'package:diya/Homepage/widgets/category_card.dart';
-import 'package:diya/screens/onboarding/components/onboard_page.dart';
 import 'package:diya/services/auth.dart';
+
+import '../chat_bot.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,7 +29,6 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
-
   final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor : Color(0xFFF5CEB8),
+        backgroundColor: Color(0xFFF5CEB8),
         actions: <Widget>[
           FlatButton.icon(
               onPressed: () async {
@@ -47,10 +47,6 @@ class HomeScreen extends StatelessWidget {
               label: Text('logout'))
         ],
       ),
-
-
-
-
       body: Stack(
         children: <Widget>[
           Container(
@@ -155,7 +151,7 @@ class HomeScreen extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) {
-                                return DetailsScreen();
+                                return Chatbot();
                               }),
                             );
                           },

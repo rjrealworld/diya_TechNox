@@ -1,4 +1,3 @@
-import 'package:diya/screens/Login/login_screen.dart';
 import 'package:diya/screens/wrapper.dart';
 import 'package:diya/services/auth.dart';
 import 'package:flutter/material.dart';
