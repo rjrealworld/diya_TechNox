@@ -112,7 +112,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                           });
 
                                           if (count1 % 2 == 0) {
-                                            audioCache.play('audio/Birds.mp3');
+                                            audioCache.play('audio/Campfire.mp3');
                                             //print(count1);
                                             // count1 = 0;
                                           } else {
@@ -162,7 +162,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                           setState(() {
                                             if (count2 % 2 == 0) {
                                               audioCache
-                                                  .play('audio/Campfire.mp3');
+                                                  .play('audio/Birds.mp3');
                                               // count = 0;
 
                                             } else {
