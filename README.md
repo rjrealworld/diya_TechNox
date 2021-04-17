@@ -10,7 +10,7 @@ Mental health issues are a stigma in our society. Whether young or old, many peo
 Through this app any user can help themselves by accessing  features such as guided meditation and yoga, connecting with psychologists and an interactive chatbot. Our app is intended for anyone with a mobile phone. Age isn't a restriction. From young to old, our app seeks to aid people with emotional help.
 
 # Workflow
-![workflow image](images/workflow.png)
+![workflow image](images/workflow.jpeg)
 
 # Our Solution
 
