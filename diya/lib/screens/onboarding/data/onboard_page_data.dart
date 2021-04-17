@@ -1,9 +1,10 @@
 import 'dart:ui';
 import 'package:diya/screens/onboarding/models/onboard_page_model.dart';
+import 'package:flutter/material.dart';
 
 List<OnboardPageModel> onboardData = [
   OnboardPageModel(
-      Color(0xFFE6E6E6),
+      Color(0xFFFFFFFF),
       Color(0xFF005699),
       Color(0xFFFFE074),
       2,
@@ -23,7 +24,7 @@ List<OnboardPageModel> onboardData = [
   OnboardPageModel(
       Color(0xFFFFE074),
       Color(0xFF39393A),
-      Color(0xFFE6E6E6),
+      Color(0xFFFFFFFF),
       0,
       'assets/images/onboard_3.png',
       'CONNECT WITH',
@@ -31,7 +32,7 @@ List<OnboardPageModel> onboardData = [
       'You might be going through a lot and need someone to talk to. Join in to connect and get temperamental assistance immediately'),
   OnboardPageModel(
       Color(0xFF39393A),
-      Color(0xFFE6E6E6),
+      Color(0xFFFFFFFF),
       Color(0xFF005699),
       1,
       'assets/images/onboard_4.png',
