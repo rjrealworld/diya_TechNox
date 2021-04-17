@@ -5,6 +5,9 @@ import 'package:diya/screens/onboarding/models/onboard_page_model.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../../loginscreen.dart';
+
+int count = 0;
 class SizeConfig {
   static MediaQueryData _mediaQueryData;
   static double screenWidth;
@@ -17,6 +20,7 @@ class SizeConfig {
   static double safeBlockVertical;
 
   void init(BuildContext context) {
+
     _mediaQueryData = MediaQuery.of(context);
     screenWidth = _mediaQueryData.size.width;
     screenHeight = _mediaQueryData.size.height;
@@ -70,6 +74,7 @@ class _OnboardPageState extends State<OnboardPage>
   }
 
   _nextButtonPressed() {
+    if (count<3){
     Provider.of<ColorProvider>(context, listen: false).color =
         widget.pageModel.nextAccentColor;
     widget.pageController.nextPage(
@@ -78,6 +83,13 @@ class _OnboardPageState extends State<OnboardPage>
       ),
       curve: Curves.fastLinearToSlowEaseIn,
     );
+
+    count = count + 1;
+    }
+    else{
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (context) => LogApp()));
+    }
   }
 
   @override

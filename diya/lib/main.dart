@@ -14,19 +14,19 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Diya',
       theme: appTheme(),
-      home: Wrapper(),
+      home: Home(),
     );
   }
 }
 
-// class Home extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: ChangeNotifierProvider(
-//         create: (context) => ColorProvider(),
-//         child: Onboarding(),
-//       ),
-//     );
-//   }
-// }
+ class Home extends StatelessWidget {
+   @override
+   Widget build(BuildContext context) {
+     return Scaffold(
+      body: ChangeNotifierProvider(
+       create: (context) => ColorProvider(),
+      child: Onboarding(),
+      ),
+    );
+ }
+ }
