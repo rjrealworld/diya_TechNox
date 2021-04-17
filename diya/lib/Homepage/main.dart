@@ -1,7 +1,6 @@
 import 'package:diya/Homepage/screens/motivation_details_screen.dart';
 import 'package:diya/screens/VideoCall/home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:diya/Homepage/constants.dart';
 import 'package:diya/Homepage/screens/details_screen.dart';
 import 'package:diya/Homepage/screens/details_screen_asana.dart';
@@ -45,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                 await _auth.signOut();
               },
               icon: Icon(Icons.person),
-              label: Text('logout'))
+              label: Text('Logout'))
         ],
       ),
       body: Stack(
@@ -73,11 +72,6 @@ class HomeScreen extends StatelessWidget {
                       alignment: Alignment.center,
                       height: 52,
                       width: 52,
-                      decoration: BoxDecoration(
-                        color: Color(0xFFF2BEA1),
-                        shape: BoxShape.circle,
-                      ),
-                      child: SvgPicture.asset("assets/icons/menu.svg"),
                     ),
                   ),
                   Text(
