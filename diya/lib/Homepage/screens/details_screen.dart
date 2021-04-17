@@ -4,8 +4,6 @@ import 'package:diya/Homepage/constants.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-
-
 class DetailsScreen extends StatefulWidget {
   @override
   _DetailsScreenState createState() => _DetailsScreenState();
@@ -46,10 +44,14 @@ class _DetailsScreenState extends State<DetailsScreen> {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFFC7B8F5),
+        elevation: 0,
+      ),
       body: Stack(
         children: <Widget>[
           Container(
-            height: size.height * .45,
+            height: size.height * .25,
             decoration: BoxDecoration(
               color: kBlueLightColor,
               image: DecorationImage(
@@ -65,9 +67,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    SizedBox(
-                      height: size.height * 0.05,
-                    ),
                     Text(
                       "Meditation",
                       style: Theme.of(context)
@@ -86,7 +85,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     Column(
                       children: <Widget>[
                         Container(
-
                           decoration: BoxDecoration(
                             boxShadow: [
                               new BoxShadow(
@@ -96,34 +94,28 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             ],
                           ),
                           child: Card(
-
                             color: Colors.white,
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Row(
-
                                 children: <Widget>[
-
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Container(
-
                                       width: 50.0,
                                       height: 50.0,
                                       child: IconButton(
-
-                                        onPressed: (){
+                                        onPressed: () {
                                           setState(() {
                                             count1 = count1 + 1;
                                             print(count1);
                                           });
 
-                                          if(count1%2 == 0){
-                                            audioCache.play('audio/audio1.mp3');
+                                          if (count1 % 2 == 0) {
+                                            audioCache.play('audio/Birds.mp3');
                                             //print(count1);
                                             // count1 = 0;
-                                          }
-                                          else{
+                                          } else {
                                             advancedPlayer.pause();
                                           }
                                         },
@@ -131,26 +123,18 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                       ),
                                     ),
                                   ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "ABC",
-                                        style: TextStyle(
-                                            color: Colors.black, fontSize: 18),
-                                      ),
-                                      Text(
-                                        "XYZ",
-                                        style: TextStyle(
-                                            color: Colors.black, fontSize: 12),
-                                      )
-                                    ],
-                                  )
+                                  Text(
+                                    "CampFire",
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 18),
+                                  ),
                                 ],
                               ),
                             ),
                           ),
+                        ),
+                        SizedBox(
+                          height: 10,
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -173,44 +157,35 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                       width: 50.0,
                                       height: 50.0,
                                       child: IconButton(
-                                          icon: _getIcon(count2),
-                                         onPressed: (){
-                                           setState(() {
-                                             if(count2%2 == 0){
-                                               audioCache.play('audio/audio1.mp3');
-                                               // count = 0;
+                                        icon: _getIcon(count2),
+                                        onPressed: () {
+                                          setState(() {
+                                            if (count2 % 2 == 0) {
+                                              audioCache
+                                                  .play('audio/Campfire.mp3');
+                                              // count = 0;
 
-                                             }
-                                             else{
-                                               advancedPlayer.pause();
-                                             }
-
-                                           });
-                                           count2 = count2 + 1;
-                                         },
+                                            } else {
+                                              advancedPlayer.pause();
+                                            }
+                                          });
+                                          count2 = count2 + 1;
+                                        },
                                       ),
                                     ),
                                   ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "ABC",
-                                        style: TextStyle(
-                                            color: Colors.black, fontSize: 18),
-                                      ),
-                                      Text(
-                                        "XYZ",
-                                        style: TextStyle(
-                                            color: Colors.black, fontSize: 12),
-                                      )
-                                    ],
-                                  )
+                                  Text(
+                                    "Birds Chirping",
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 18),
+                                  ),
                                 ],
                               ),
                             ),
                           ),
+                        ),
+                        SizedBox(
+                          height: 10,
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -234,14 +209,14 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                       height: 50.0,
                                       child: IconButton(
                                         icon: _getIcon(count3),
-                                        onPressed: (){
+                                        onPressed: () {
                                           setState(() {
-                                            if(count3%2 == 0){
-                                              audioCache.play('audio/audio1.mp3');
+                                            if (count3 % 2 == 0) {
+                                              audioCache
+                                                  .play('audio/Power Down.mp3');
                                               // count = 0;
 
-                                            }
-                                            else{
+                                            } else {
                                               advancedPlayer.pause();
                                             }
                                             count3 = count3 + 1;
@@ -250,26 +225,18 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                       ),
                                     ),
                                   ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "ABC",
-                                        style: TextStyle(
-                                            color: Colors.black, fontSize: 18),
-                                      ),
-                                      Text(
-                                        "XYZ",
-                                        style: TextStyle(
-                                            color: Colors.black, fontSize: 12),
-                                      )
-                                    ],
-                                  )
+                                  Text(
+                                    "Power Down",
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 18),
+                                  ),
                                 ],
                               ),
                             ),
                           ),
+                        ),
+                        SizedBox(
+                          height: 10,
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -289,46 +256,37 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Container(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: IconButton(
-                                        icon: _getIcon(count4),
-                                        onPressed: (){
-                                          setState(() {
-                                            if(count4%2 == 0){
-                                              audioCache.play('audio/audio1.mp3');
-                                              // count = 0;
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: IconButton(
+                                          icon: _getIcon(count4),
+                                          onPressed: () {
+                                            setState(() {
+                                              if (count4 % 2 == 0) {
+                                                audioCache
+                                                    .play('audio/audio1.mp3');
+                                                // count = 0;
 
-                                            }
-                                            else{
-                                              advancedPlayer.pause();
-                                            }
-                                            count4 = count4 + 1;
-                                          });
-                                        },
-                                      )
-                                    ),
+                                              } else {
+                                                advancedPlayer.pause();
+                                              }
+                                              count4 = count4 + 1;
+                                            });
+                                          },
+                                        )),
                                   ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "ABC",
-                                        style: TextStyle(
-                                            color: Colors.black, fontSize: 18),
-                                      ),
-                                      Text(
-                                        "XYZ",
-                                        style: TextStyle(
-                                            color: Colors.black, fontSize: 12),
-                                      )
-                                    ],
-                                  )
+                                  Text(
+                                    "ABC",
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 18),
+                                  ),
                                 ],
                               ),
                             ),
                           ),
+                        ),
+                        SizedBox(
+                          height: 10,
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -348,42 +306,30 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Container(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: IconButton(
-                                        icon: _getIcon(count5),
-                                        onPressed: (){
-                                          setState(() {
-                                            if(count5%2 == 0){
-                                              audioCache.play('audio/audio1.mp3');
-                                              // count = 0;
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: IconButton(
+                                          icon: _getIcon(count5),
+                                          onPressed: () {
+                                            setState(() {
+                                              if (count5 % 2 == 0) {
+                                                audioCache
+                                                    .play('audio/audio1.mp3');
+                                                // count = 0;
 
-                                            }
-                                            else{
-                                              advancedPlayer.pause();
-                                            }
-                                            count5 = count5 + 1;
-                                          });
-                                        },
-                                      )
-                                    ),
+                                              } else {
+                                                advancedPlayer.pause();
+                                              }
+                                              count5 = count5 + 1;
+                                            });
+                                          },
+                                        )),
                                   ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "ABC",
-                                        style: TextStyle(
-                                            color: Colors.black, fontSize: 18),
-                                      ),
-                                      Text(
-                                        "XYZ",
-                                        style: TextStyle(
-                                            color: Colors.black, fontSize: 12),
-                                      )
-                                    ],
-                                  )
+                                  Text(
+                                    "ABC",
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 18),
+                                  ),
                                 ],
                               ),
                             ),
@@ -404,7 +350,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
 
 Widget _getIcon(int count) {
   if (count % 2 == 0) {
-
     return Icon(Icons.play_arrow);
   } else {
     return Icon(Icons.pause);
