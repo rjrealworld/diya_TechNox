@@ -9,6 +9,9 @@ Mental health issues are a stigma in our society. Whether young or old, many peo
 
 Through this app any user can help themselves by accessing  features such as guided meditation and yoga, connecting with psychologists and an interactive chatbot. Our app is intended for anyone with a mobile phone. Age isn't a restriction. From young to old, our app seeks to aid people with emotional help.
 
+# Workflow
+![workflow image](images/workflow.png)
+
 # Our Solution
 
 Our user-friendly app provides a relaxing ambience and user privacy with a chatbot, which can be used to have a chill talk and in cases of people suffering from high stress/anxiety and other mental health issues, having an option of talking to a counsellor online through video call is implemented. The video calling idea is much easier to use and would be ideal for those who have trouble with in-person appointments.
@@ -25,6 +28,9 @@ When ze feels low, all they need is a little  motivation! And that’s also impl
 4. Meditation/ Music: The meditation and Music feature is yet another interesting page where the user can casually calm down his/her mind by physical yoga asanas or by listening to soothing music!
 
 # Tech Stack
+
+![techstack image](images/techstack.png)
+
 ```
 Flutter
 Dialogflow
