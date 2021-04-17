@@ -3,6 +3,9 @@ import 'package:diya/providers/color_provider.dart';
 import 'package:diya/screens/onboarding/components/onboard_page.dart';
 import 'package:diya/screens/onboarding/data/onboard_page_data.dart';
 import 'package:provider/provider.dart';
+import 'package:diya/screens/wrapper.dart';
+import 'package:diya/services/auth.dart';
+import 'package:diya/models/user.dart';
 
 import '../../loginscreen.dart';
 import 'components/page_view_indicator.dart';
@@ -58,7 +61,9 @@ class Onboarding extends StatelessWidget {
                     ),
                     onPressed: (){
                       Navigator.of(context)
-                          .pushReplacement(MaterialPageRoute(builder: (context) => LogApp()));
+                          .pushReplacement(MaterialPageRoute(builder: (context) => StreamProvider<User>.value(
+                          value: AuthService().user,
+                          child: Wrapper())));
                     },
                   ),
                 ),
