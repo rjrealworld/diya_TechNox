@@ -6,11 +6,16 @@ import 'package:diya/components/rounded_button.dart';
 import 'package:diya/components/rounded_input_field.dart';
 import 'package:diya/components/rounded_password_field.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:diya/services/auth.dart';
+
 
 class Body extends StatelessWidget {
-  const Body({
+  final AuthService _auth = AuthService();
+   Body({
     Key key,
   }) : super(key: key);
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +53,21 @@ class Body extends StatelessWidget {
                     },
                   ),
                 );
+              },
+            ),
+            RaisedButton(
+              child: Text('Sign in anon'),
+              onPressed: () async{
+                dynamic result = await _auth.signInAnon();
+
+                if (result == null){
+                  print('error');
+                }
+
+                else{
+                  print('signed in');
+                  print(result.uid);
+                }
               },
             ),
           ],
