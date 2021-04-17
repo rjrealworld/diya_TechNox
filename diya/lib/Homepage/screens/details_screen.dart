@@ -3,7 +3,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:diya/Homepage/constants.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+
 int count = 0;
+
 class DetailsScreen extends StatefulWidget {
   @override
   _DetailsScreenState createState() => _DetailsScreenState();
@@ -14,31 +16,28 @@ class _DetailsScreenState extends State<DetailsScreen> {
   Duration _position = new Duration();
   AudioPlayer advancedPlayer;
   AudioCache audioCache;
- // int count = 0;
+  // int count = 0;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     initPlayer();
   }
 
-  void initPlayer(){
-    
+  void initPlayer() {
     advancedPlayer = new AudioPlayer();
     audioCache = new AudioCache(fixedPlayer: advancedPlayer);
 
     advancedPlayer.durationHandler = (d) => setState(() {
-      _duration = d;
-    });
+          _duration = d;
+        });
 
     advancedPlayer.positionHandler = (p) => setState(() {
-      _position = p;
-    });
+          _position = p;
+        });
   }
 
   String localFilePath;
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -81,71 +80,227 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       ),
                     ),
                     SizedBox(height: 20),
-                    Wrap(
-                      spacing: 20,
-                      runSpacing: 20,
+                    Column(
                       children: <Widget>[
-                        SeassionCard(
-
-                          seassionNum: 1,
-                          isDone: true,
-                         press: () {
-                            if(count%2 == 0){
-                              audioCache.play('audio/audio1.mp3');
-                              count = 0;
-                            }
-                            else{
-                              advancedPlayer.pause();
-                            }
-                            count = count + 1;
-                            
-                         }
-
-                        //},
+                        Container(
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              new BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 15.0,
+                              ),
+                            ],
+                          ),
+                          child: Card(
+                            color: Colors.white,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: Icon(Icons.play_arrow),
+                                    ),
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        "ABC",
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 18),
+                                      ),
+                                      Text(
+                                        "XYZ",
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 12),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
-                        SeassionCard(
-                          seassionNum: 2,
-                          press: () {},
+                        Container(
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              new BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 15.0,
+                              ),
+                            ],
+                          ),
+                          child: Card(
+                            color: Colors.white,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: Icon(Icons.play_arrow),
+                                    ),
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        "ABC",
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 18),
+                                      ),
+                                      Text(
+                                        "XYZ",
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 12),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
-                        SeassionCard(
-                          seassionNum: 3,
-                          press: () {},
+                        Container(
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              new BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 15.0,
+                              ),
+                            ],
+                          ),
+                          child: Card(
+                            color: Colors.white,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: Icon(Icons.play_arrow),
+                                    ),
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        "ABC",
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 18),
+                                      ),
+                                      Text(
+                                        "XYZ",
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 12),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
-                        SeassionCard(
-                          seassionNum: 4,
-                          press: () {},
+                        Container(
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              new BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 15.0,
+                              ),
+                            ],
+                          ),
+                          child: Card(
+                            color: Colors.white,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: Icon(Icons.play_arrow),
+                                    ),
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        "ABC",
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 18),
+                                      ),
+                                      Text(
+                                        "XYZ",
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 12),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
-                        SeassionCard(
-                          seassionNum: 5,
-                          press: () {},
-                        ),
-                        SeassionCard(
-                          seassionNum: 6,
-                          press: () {},
-                        ),
-                        SeassionCard(
-                          seassionNum: 6,
-                          press: () {},
-                        ),
-                        SeassionCard(
-                          seassionNum: 6,
-                          press: () {},
-                        ),
-                        SeassionCard(
-                          seassionNum: 6,
-                          press: () {},
-                        ),
-                        SeassionCard(
-                          seassionNum: 6,
-                          press: () {},
-                        ),
-                        SeassionCard(
-                          seassionNum: 6,
-                          press: () {},
-                        ),
-                        SeassionCard(
-                          seassionNum: 6,
-                          press: () {},
+                        Container(
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              new BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 15.0,
+                              ),
+                            ],
+                          ),
+                          child: Card(
+                            color: Colors.white,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: Icon(Icons.play_arrow),
+                                    ),
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        "ABC",
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 18),
+                                      ),
+                                      Text(
+                                        "XYZ",
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 12),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -160,17 +315,17 @@ class _DetailsScreenState extends State<DetailsScreen> {
   }
 }
 
-Widget _getIcon(){
-  if (count%2 == 0){
+Widget _getIcon() {
+  if (count % 2 == 0) {
     //count = 0;
-    isDone: true;
+    isDone:
+    true;
     return Icon(Icons.play_arrow);
-
-  }
-  else{
+  } else {
     return Icon(Icons.pause);
   }
 }
+
 class SeassionCard extends StatelessWidget {
   final int seassionNum;
   final bool isDone;
@@ -221,9 +376,8 @@ class SeassionCard extends StatelessWidget {
                       ),
                       child: _getIcon(),
 
-
-                        //color: isDone ? Colors.white : kBlueColor,
-                     // ),
+                      //color: isDone ? Colors.white : kBlueColor,
+                      // ),
                     ),
                     SizedBox(width: 10),
                     Text(
