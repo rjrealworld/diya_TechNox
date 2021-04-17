@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "536018602940",
+    "project_id": "technox-b0e1b",
+    "storage_bucket": "technox-b0e1b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536018602940:android:88fede02fc26570b7679b9",
+        "android_client_info": {
+          "package_name": "com.example.diya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536018602940-71lamd42o09r5m2fublc7ok7ugukdhms.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABqxzl1MrhmrFkHy490odLayS5P7_quOI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "536018602940-71lamd42o09r5m2fublc7ok7ugukdhms.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
