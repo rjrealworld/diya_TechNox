@@ -1,3 +1,4 @@
+import 'package:diya/Homepage/main.dart';
 import 'package:flutter/material.dart';
 import 'package:diya/Screens/Login/components/background.dart';
 import 'package:diya/Screens/Signup/signup_screen.dart';
@@ -40,7 +41,10 @@ class Body extends StatelessWidget {
             ),
             RoundedButton(
               text: "LOGIN",
-              press: () {},
+              press: () {
+                Navigator.of(context)
+                    .pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
+              },
             ),
             SizedBox(height: size.height * 0.03),
             AlreadyHaveAnAccountCheck(
