@@ -6,6 +6,7 @@ import 'package:diya/Homepage/screens/details_screen.dart';
 import 'package:diya/Homepage/screens/details_screen_asana.dart';
 import 'package:diya/Homepage/widgets/category_card.dart';
 import 'package:diya/screens/onboarding/components/onboard_page.dart';
+import 'package:diya/services/auth.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,11 +28,29 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
+
+  final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context)
         .size; //this gonna give us total height and with of our device
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0.0,
+        backgroundColor : Color(0xFFF5CEB8),
+        actions: <Widget>[
+          FlatButton.icon(
+              onPressed: () async {
+                await _auth.signOut();
+              },
+              icon: Icon(Icons.person),
+              label: Text('logout'))
+        ],
+      ),
+
+
+
+
       body: Stack(
         children: <Widget>[
           Container(

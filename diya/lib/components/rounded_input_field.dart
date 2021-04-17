@@ -3,11 +3,13 @@ import 'package:diya/components/text_field_container.dart';
 import 'package:diya/constants.dart';
 
 class RoundedInputField extends StatelessWidget {
+  final Function validate;
   final String hintText;
   final IconData icon;
   final ValueChanged<String> onChanged;
   const RoundedInputField({
     Key key,
+    this.validate,
     this.hintText,
     this.icon = Icons.person,
     this.onChanged,
@@ -16,7 +18,8 @@ class RoundedInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
-      child: TextField(
+      child: TextFormField(
+        validator: validate,
         onChanged: onChanged,
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
@@ -25,6 +28,7 @@ class RoundedInputField extends StatelessWidget {
             color: kPrimaryColor,
           ),
           hintText: hintText,
+          hintStyle: TextStyle(color: kPrimaryColor),
           border: InputBorder.none,
         ),
       ),
