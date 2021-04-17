@@ -1,8 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:diya/Homepage/constants.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
+int count = 0;
+class DetailsScreen extends StatefulWidget {
+  @override
+  _DetailsScreenState createState() => _DetailsScreenState();
+}
 
-class DetailsScreen extends StatelessWidget {
+class _DetailsScreenState extends State<DetailsScreen> {
+  Duration _duration = new Duration();
+  Duration _position = new Duration();
+  AudioPlayer advancedPlayer;
+  AudioCache audioCache;
+ // int count = 0;
+
+  @override
+  void initState(){
+    super.initState();
+    initPlayer();
+  }
+
+  void initPlayer(){
+    
+    advancedPlayer = new AudioPlayer();
+    audioCache = new AudioCache(fixedPlayer: advancedPlayer);
+
+    advancedPlayer.durationHandler = (d) => setState(() {
+      _duration = d;
+    });
+
+    advancedPlayer.positionHandler = (p) => setState(() {
+      _position = p;
+    });
+  }
+
+  String localFilePath;
+
+
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -49,9 +86,22 @@ class DetailsScreen extends StatelessWidget {
                       runSpacing: 20,
                       children: <Widget>[
                         SeassionCard(
+
                           seassionNum: 1,
                           isDone: true,
-                          press: () {},
+                         press: () {
+                            if(count%2 == 0){
+                              audioCache.play('audio/audio1.mp3');
+                              count = 0;
+                            }
+                            else{
+                              advancedPlayer.pause();
+                            }
+                            count = count + 1;
+                            
+                         }
+
+                        //},
                         ),
                         SeassionCard(
                           seassionNum: 2,
@@ -110,6 +160,17 @@ class DetailsScreen extends StatelessWidget {
   }
 }
 
+Widget _getIcon(){
+  if (count%2 == 0){
+    //count = 0;
+    isDone: true;
+    return Icon(Icons.play_arrow);
+
+  }
+  else{
+    return Icon(Icons.pause);
+  }
+}
 class SeassionCard extends StatelessWidget {
   final int seassionNum;
   final bool isDone;
@@ -158,10 +219,11 @@ class SeassionCard extends StatelessWidget {
                         shape: BoxShape.circle,
                         border: Border.all(color: kBlueColor),
                       ),
-                      child: Icon(
-                        Icons.play_arrow,
-                        color: isDone ? Colors.white : kBlueColor,
-                      ),
+                      child: _getIcon(),
+
+
+                        //color: isDone ? Colors.white : kBlueColor,
+                     // ),
                     ),
                     SizedBox(width: 10),
                     Text(
