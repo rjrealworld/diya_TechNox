@@ -4,6 +4,7 @@ import 'package:diya/screens/onboarding/components/onboard_page.dart';
 import 'package:diya/screens/onboarding/data/onboard_page_data.dart';
 import 'package:provider/provider.dart';
 
+import '../../loginscreen.dart';
 import 'components/page_view_indicator.dart';
 
 class Onboarding extends StatelessWidget {
@@ -45,12 +46,20 @@ class Onboarding extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 32.0),
-                  child: Text(
-                    'Skip',
-                    style: TextStyle(
-                      color: colorProvider.color,
+                  padding: const EdgeInsets.only(right: 5.0),
+                  child: FlatButton(
+                    child: Text(
+                      'Skip',
+                      style: TextStyle(
+                        color: colorProvider.color,
+                        fontSize: 20,
+
+                      ),
                     ),
+                    onPressed: (){
+                      Navigator.of(context)
+                          .pushReplacement(MaterialPageRoute(builder: (context) => LogApp()));
+                    },
                   ),
                 ),
               ],
