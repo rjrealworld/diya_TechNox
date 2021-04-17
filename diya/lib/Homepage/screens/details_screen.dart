@@ -102,7 +102,25 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                     child: Container(
                                       width: 50.0,
                                       height: 50.0,
-                                      child: Icon(Icons.play_arrow),
+                                      child: IconButton(
+
+                                        onPressed: (){
+                                          setState(() {
+                                            if(count%2 == 0){
+                                              audioCache.play('audio/audio1.mp3');
+                                              // count = 0;
+
+                                            }
+                                            else{
+                                              advancedPlayer.pause();
+                                            }
+                                            count = count + 1;
+                                          });
+
+
+                                        },
+                                        icon: _getIcon(),
+                                      ),
                                     ),
                                   ),
                                   Column(
@@ -146,7 +164,22 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                     child: Container(
                                       width: 50.0,
                                       height: 50.0,
-                                      child: Icon(Icons.play_arrow),
+                                      child: IconButton(
+                                          icon: _getIcon(),
+                                         onPressed: (){
+                                           setState(() {
+                                             if(count%2 == 0){
+                                               audioCache.play('audio/audio1.mp3');
+                                               // count = 0;
+
+                                             }
+                                             else{
+                                               advancedPlayer.pause();
+                                             }
+                                             count = count + 1;
+                                           });
+                                         },
+                                      ),
                                     ),
                                   ),
                                   Column(
@@ -190,7 +223,22 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                     child: Container(
                                       width: 50.0,
                                       height: 50.0,
-                                      child: Icon(Icons.play_arrow),
+                                      child: IconButton(
+                                        icon: _getIcon(),
+                                        onPressed: (){
+                                          setState(() {
+                                            if(count%2 == 0){
+                                              audioCache.play('audio/audio1.mp3');
+                                              // count = 0;
+
+                                            }
+                                            else{
+                                              advancedPlayer.pause();
+                                            }
+                                            count = count + 1;
+                                          });
+                                        },
+                                      ),
                                     ),
                                   ),
                                   Column(
@@ -234,7 +282,22 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                     child: Container(
                                       width: 50.0,
                                       height: 50.0,
-                                      child: Icon(Icons.play_arrow),
+                                      child: IconButton(
+                                        icon: _getIcon(),
+                                        onPressed: (){
+                                          setState(() {
+                                            if(count%2 == 0){
+                                              audioCache.play('audio/audio1.mp3');
+                                              // count = 0;
+
+                                            }
+                                            else{
+                                              advancedPlayer.pause();
+                                            }
+                                            count = count + 1;
+                                          });
+                                        },
+                                      )
                                     ),
                                   ),
                                   Column(
@@ -278,7 +341,22 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                     child: Container(
                                       width: 50.0,
                                       height: 50.0,
-                                      child: Icon(Icons.play_arrow),
+                                      child: IconButton(
+                                        icon: _getIcon(),
+                                        onPressed: (){
+                                          setState(() {
+                                            if(count%2 == 0){
+                                              audioCache.play('audio/audio1.mp3');
+                                              // count = 0;
+
+                                            }
+                                            else{
+                                              advancedPlayer.pause();
+                                            }
+                                            count = count + 1;
+                                          });
+                                        },
+                                      )
                                     ),
                                   ),
                                   Column(
