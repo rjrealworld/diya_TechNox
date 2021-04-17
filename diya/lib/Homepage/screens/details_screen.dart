@@ -4,7 +4,7 @@ import 'package:diya/Homepage/constants.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-int count = 0;
+
 
 class DetailsScreen extends StatefulWidget {
   @override
@@ -17,6 +17,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
   AudioPlayer advancedPlayer;
   AudioCache audioCache;
   // int count = 0;
+  int count1 = 0;
+  int count2 = 0, count3 = 0, count4 = 0, count5 = 0;
 
   @override
   void initState() {
@@ -42,6 +44,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -83,6 +86,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     Column(
                       children: <Widget>[
                         Container(
+
                           decoration: BoxDecoration(
                             boxShadow: [
                               new BoxShadow(
@@ -92,34 +96,38 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             ],
                           ),
                           child: Card(
+
                             color: Colors.white,
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Row(
+
                                 children: <Widget>[
+
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Container(
+
                                       width: 50.0,
                                       height: 50.0,
                                       child: IconButton(
 
                                         onPressed: (){
                                           setState(() {
-                                            if(count%2 == 0){
-                                              audioCache.play('audio/audio1.mp3');
-                                              // count = 0;
-
-                                            }
-                                            else{
-                                              advancedPlayer.pause();
-                                            }
-                                            count = count + 1;
+                                            count1 = count1 + 1;
+                                            print(count1);
                                           });
 
-
+                                          if(count1%2 == 0){
+                                            audioCache.play('audio/audio1.mp3');
+                                            //print(count1);
+                                            // count1 = 0;
+                                          }
+                                          else{
+                                            advancedPlayer.pause();
+                                          }
                                         },
-                                        icon: _getIcon(),
+                                        icon: _getIcon(count1),
                                       ),
                                     ),
                                   ),
@@ -165,10 +173,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                       width: 50.0,
                                       height: 50.0,
                                       child: IconButton(
-                                          icon: _getIcon(),
+                                          icon: _getIcon(count2),
                                          onPressed: (){
                                            setState(() {
-                                             if(count%2 == 0){
+                                             if(count2%2 == 0){
                                                audioCache.play('audio/audio1.mp3');
                                                // count = 0;
 
@@ -176,8 +184,9 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                              else{
                                                advancedPlayer.pause();
                                              }
-                                             count = count + 1;
+
                                            });
+                                           count2 = count2 + 1;
                                          },
                                       ),
                                     ),
@@ -224,10 +233,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                       width: 50.0,
                                       height: 50.0,
                                       child: IconButton(
-                                        icon: _getIcon(),
+                                        icon: _getIcon(count3),
                                         onPressed: (){
                                           setState(() {
-                                            if(count%2 == 0){
+                                            if(count3%2 == 0){
                                               audioCache.play('audio/audio1.mp3');
                                               // count = 0;
 
@@ -235,7 +244,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                             else{
                                               advancedPlayer.pause();
                                             }
-                                            count = count + 1;
+                                            count3 = count3 + 1;
                                           });
                                         },
                                       ),
@@ -283,10 +292,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                       width: 50.0,
                                       height: 50.0,
                                       child: IconButton(
-                                        icon: _getIcon(),
+                                        icon: _getIcon(count4),
                                         onPressed: (){
                                           setState(() {
-                                            if(count%2 == 0){
+                                            if(count4%2 == 0){
                                               audioCache.play('audio/audio1.mp3');
                                               // count = 0;
 
@@ -294,7 +303,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                             else{
                                               advancedPlayer.pause();
                                             }
-                                            count = count + 1;
+                                            count4 = count4 + 1;
                                           });
                                         },
                                       )
@@ -342,10 +351,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                       width: 50.0,
                                       height: 50.0,
                                       child: IconButton(
-                                        icon: _getIcon(),
+                                        icon: _getIcon(count5),
                                         onPressed: (){
                                           setState(() {
-                                            if(count%2 == 0){
+                                            if(count5%2 == 0){
                                               audioCache.play('audio/audio1.mp3');
                                               // count = 0;
 
@@ -353,7 +362,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                             else{
                                               advancedPlayer.pause();
                                             }
-                                            count = count + 1;
+                                            count5 = count5 + 1;
                                           });
                                         },
                                       )
@@ -393,11 +402,9 @@ class _DetailsScreenState extends State<DetailsScreen> {
   }
 }
 
-Widget _getIcon() {
+Widget _getIcon(int count) {
   if (count % 2 == 0) {
-    //count = 0;
-    isDone:
-    true;
+
     return Icon(Icons.play_arrow);
   } else {
     return Icon(Icons.pause);
@@ -452,7 +459,7 @@ class SeassionCard extends StatelessWidget {
                         shape: BoxShape.circle,
                         border: Border.all(color: kBlueColor),
                       ),
-                      child: _getIcon(),
+                      //child: _getIcon(),
 
                       //color: isDone ? Colors.white : kBlueColor,
                       // ),
