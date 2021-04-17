@@ -8,6 +8,10 @@ class DetailsScreenAsana extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFFC7B8F5),
+        elevation: 0,
+      ),
       body: Stack(
         children: <Widget>[
           Container(
@@ -27,9 +31,6 @@ class DetailsScreenAsana extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    SizedBox(
-                      height: size.height * 0.05,
-                    ),
                     Text(
                       "Yoga Asanas",
                       style: Theme.of(context)
@@ -89,7 +90,11 @@ class DetailsScreenAsana extends StatelessWidget {
                           ),
                           IconButton(
                             icon: const Icon(Icons.play_arrow),
-                            onPressed: () async => await canLaunch("https://www.youtube.com/watch?v=K8l1SD3I4ys") ? await launch("https://www.youtube.com/watch?v=K8l1SD3I4ys") : throw 'Could not launch',
+                            onPressed: () async => await canLaunch(
+                                    "https://www.youtube.com/watch?v=K8l1SD3I4ys")
+                                ? await launch(
+                                    "https://www.youtube.com/watch?v=K8l1SD3I4ys")
+                                : throw 'Could not launch',
                           ),
                         ],
                       ),
@@ -128,17 +133,18 @@ class DetailsScreenAsana extends StatelessWidget {
                               ],
                             ),
                           ),
-
-                            IconButton(
-                              icon: const Icon(Icons.play_arrow),
-                              onPressed: () async => await canLaunch("https://www.youtube.com/watch?v=Km2oxamKhhA") ? await launch("https://www.youtube.com/watch?v=Km2oxamKhhA") : throw 'Could not launch',
-
-                            ),
+                          IconButton(
+                            icon: const Icon(Icons.play_arrow),
+                            onPressed: () async => await canLaunch(
+                                    "https://www.youtube.com/watch?v=Km2oxamKhhA")
+                                ? await launch(
+                                    "https://www.youtube.com/watch?v=Km2oxamKhhA")
+                                : throw 'Could not launch',
+                          ),
                         ],
                       ),
                     ),
                     SizedBox(height: 20),
-
                     Container(
                       padding: EdgeInsets.all(10),
                       height: 90,
@@ -173,10 +179,13 @@ class DetailsScreenAsana extends StatelessWidget {
                               ],
                             ),
                           ),
-
                           IconButton(
                             icon: const Icon(Icons.play_arrow),
-                            onPressed: () async => await canLaunch("https://www.youtube.com/watch?v=UxofWGGhWTI") ? await launch("https://www.youtube.com/watch?v=UxofWGGhWTI") : throw 'Could not launch',
+                            onPressed: () async => await canLaunch(
+                                    "https://www.youtube.com/watch?v=UxofWGGhWTI")
+                                ? await launch(
+                                    "https://www.youtube.com/watch?v=UxofWGGhWTI")
+                                : throw 'Could not launch',
                           ),
                         ],
                       ),
@@ -189,7 +198,6 @@ class DetailsScreenAsana extends StatelessWidget {
                           .title
                           .copyWith(fontWeight: FontWeight.bold),
                     ),
-
                     Container(
                       margin: EdgeInsets.symmetric(vertical: 20),
                       padding: EdgeInsets.all(10),
@@ -228,7 +236,11 @@ class DetailsScreenAsana extends StatelessWidget {
                           IconButton(
                             icon: const Icon(Icons.play_arrow),
                             tooltip: 'Increase volume by 10',
-                            onPressed: () async => await canLaunch("https://www.youtube.com/watch?v=MaFPNfHlaOk") ? await launch("https://www.youtube.com/watch?v=MaFPNfHlaOk") : throw 'Could not launch',
+                            onPressed: () async => await canLaunch(
+                                    "https://www.youtube.com/watch?v=MaFPNfHlaOk")
+                                ? await launch(
+                                    "https://www.youtube.com/watch?v=MaFPNfHlaOk")
+                                : throw 'Could not launch',
                           ),
                         ],
                       ),
@@ -270,13 +282,16 @@ class DetailsScreenAsana extends StatelessWidget {
                           IconButton(
                             icon: const Icon(Icons.play_arrow),
                             tooltip: 'Increase volume by 10',
-                            onPressed: () async => await canLaunch("https://www.youtube.com/watch?v=J_lLt6-GlMo") ? await launch("https://www.youtube.com/watch?v=J_lLt6-GlMo") : throw 'Could not launch',
+                            onPressed: () async => await canLaunch(
+                                    "https://www.youtube.com/watch?v=J_lLt6-GlMo")
+                                ? await launch(
+                                    "https://www.youtube.com/watch?v=J_lLt6-GlMo")
+                                : throw 'Could not launch',
                           ),
                         ],
                       ),
                     ),
                     SizedBox(height: 20),
-
                     Container(
                       padding: EdgeInsets.all(10),
                       height: 90,
@@ -313,7 +328,11 @@ class DetailsScreenAsana extends StatelessWidget {
                           ),
                           IconButton(
                             icon: const Icon(Icons.play_arrow),
-                            onPressed: () async => await canLaunch("https://www.youtube.com/watch?v=NnbvPeAIhmA") ? await launch("https://www.youtube.com/watch?v=NnbvPeAIhmA") : throw 'Could not launch',
+                            onPressed: () async => await canLaunch(
+                                    "https://www.youtube.com/watch?v=NnbvPeAIhmA")
+                                ? await launch(
+                                    "https://www.youtube.com/watch?v=NnbvPeAIhmA")
+                                : throw 'Could not launch',
                           ),
                         ],
                       ),
@@ -363,7 +382,11 @@ class DetailsScreenAsana extends StatelessWidget {
                           ),
                           IconButton(
                             icon: const Icon(Icons.play_arrow),
-                            onPressed: () async => await canLaunch("https://www.youtube.com/watch?v=1FZXaqTgC6w") ? await launch("https://www.youtube.com/watch?v=1FZXaqTgC6w") : throw 'Could not launch',
+                            onPressed: () async => await canLaunch(
+                                    "https://www.youtube.com/watch?v=1FZXaqTgC6w")
+                                ? await launch(
+                                    "https://www.youtube.com/watch?v=1FZXaqTgC6w")
+                                : throw 'Could not launch',
                           ),
                         ],
                       ),
@@ -404,7 +427,11 @@ class DetailsScreenAsana extends StatelessWidget {
                           ),
                           IconButton(
                             icon: const Icon(Icons.play_arrow),
-                            onPressed: () async => await canLaunch("https://www.youtube.com/watch?v=QVEINjrYUPU") ? await launch("https://www.youtube.com/watch?v=QVEINjrYUPU") : throw 'Could not launch',
+                            onPressed: () async => await canLaunch(
+                                    "https://www.youtube.com/watch?v=QVEINjrYUPU")
+                                ? await launch(
+                                    "https://www.youtube.com/watch?v=QVEINjrYUPU")
+                                : throw 'Could not launch',
                           ),
                         ],
                       ),

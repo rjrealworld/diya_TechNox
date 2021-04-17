@@ -1,4 +1,5 @@
 import 'package:diya/Homepage/screens/motivation_details_screen.dart';
+import 'package:diya/screens/VideoCall/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:diya/Homepage/constants.dart';
@@ -127,7 +128,7 @@ class HomeScreen extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) {
-                                return DetailsScreen();
+                                return HomePage();
                               }),
                             );
                           },
