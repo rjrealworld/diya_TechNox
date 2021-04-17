@@ -1,3 +1,4 @@
+import 'package:diya/screens/wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:diya/providers/color_provider.dart';
 import 'package:diya/screens/onboarding/onboarding.dart';
@@ -13,19 +14,19 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Diya',
       theme: appTheme(),
-      home: Home(),
+      home: Wrapper(),
     );
   }
 }
 
-class Home extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: ChangeNotifierProvider(
-        create: (context) => ColorProvider(),
-        child: Onboarding(),
-      ),
-    );
-  }
-}
+// class Home extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: ChangeNotifierProvider(
+//         create: (context) => ColorProvider(),
+//         child: Onboarding(),
+//       ),
+//     );
+//   }
+// }
