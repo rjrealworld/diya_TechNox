@@ -79,12 +79,13 @@ class _BodyState extends State<Body> {
                           error = 'Sign in with valid credentials';
                         });
                         }
-                      }
-
                       else {
                         Navigator.of(context)
                             .pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
                       }
+
+                      }
+
                     }
 
                   // press: () {
