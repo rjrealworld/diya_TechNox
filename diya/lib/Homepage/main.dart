@@ -1,3 +1,4 @@
+import 'package:diya/Homepage/screens/motivation_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:diya/Homepage/constants.dart';
@@ -35,7 +36,7 @@ class HomeScreen extends StatelessWidget {
         children: <Widget>[
           Container(
             // Here the height of the container is 45% of our total height
-            height: MediaQuery.of(context).size.height* .33,
+            height: MediaQuery.of(context).size.height * .33,
             decoration: BoxDecoration(
               color: Color(0xFFF5CEB8),
               image: DecorationImage(
@@ -112,6 +113,18 @@ class HomeScreen extends StatelessWidget {
                               context,
                               MaterialPageRoute(builder: (context) {
                                 return DetailsScreen();
+                              }),
+                            );
+                          },
+                        ),
+                        CategoryCard(
+                          title: "Motivation",
+                          svgSrc: "assets/icons/Meditation.svg",
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return MotivationDetailsScreen();
                               }),
                             );
                           },
