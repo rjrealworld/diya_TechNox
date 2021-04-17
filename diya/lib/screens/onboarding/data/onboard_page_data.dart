@@ -11,7 +11,7 @@ List<OnboardPageModel> onboardData = [
       'assets/images/onboard_.png',
       'EMOTIONAL',
       'GLOOM',
-      'Emotions can be messy, complicated, and downright confusing sometimes. We are here to aid you through your emotional gloom.'),
+      'Emotions can be messy, complicated, and downright confusing. We are here to aid you through your emotional gloom.'),
   OnboardPageModel(
       Color(0xFF005699),
       Color(0xFFFFE074),
@@ -20,7 +20,7 @@ List<OnboardPageModel> onboardData = [
       'assets/images/onboard_2.png',
       'ENERGIZE',
       'YOURSELF',
-      'Research shows that music can boost happiness and reduce anxiety. So get in to alievate your mood through music and fun yoga.'),
+      'Research shows that music can boost happiness and reduce anxiety. So get in to alleviate your mood through music and rejuvenating yoga.'),
   OnboardPageModel(
       Color(0xFFFFE074),
       Color(0xFF39393A),
@@ -29,7 +29,7 @@ List<OnboardPageModel> onboardData = [
       'assets/images/onboard_3.png',
       'CONNECT WITH',
       'COUNSELLOR',
-      'You might be going through a lot and need someone to talk to. Join in to connect and get temperamental assistance immediately'),
+      'You might be going through a lot and would need someone to talk to. Join in to connect and get temperamental assistance immediately'),
   OnboardPageModel(
       Color(0xFF39393A),
       Color(0xFFFFFFFF),
@@ -38,5 +38,5 @@ List<OnboardPageModel> onboardData = [
       'assets/images/onboard_4.png',
       'FRIEND',
       'IN DEED',
-      'Sometimes you cannot share things with your friends but come on this platform and relieve your stress. We are your handy friend in deed.'),
+      'At time you simply can\'t share things with your friends, come onto this platform and relieve your stress. We are your handy friend in deed!'),
 ];
