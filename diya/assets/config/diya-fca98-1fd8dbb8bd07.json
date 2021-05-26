@@ -1,9 +1,9 @@
 {
   "type": "service_account",
-  "project_id": "diya-fca98",
+  "project_id": "diya-****",
   "private_key_id": "**************",
   "private_key": "-----BEGIN PRIVATE KEY-----\n********\n-----END PRIVATE KEY-----\n",
-  "client_email": "diya-fca98@appspot.gserviceaccount.com",
+  "client_email": "diya-****@appspot.gserviceaccount.com",
   "client_id": "**********",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
   "token_uri": "https://oauth2.googleapis.com/token",
